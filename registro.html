@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesswaste - Registro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(to bottom, #468585, #50B498);
+            color: #ffffff;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 300;
+        }
+
+        .form-container {
+            background-color: rgba(217, 217, 217, 0.33);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            width: 300px; /* Asegura que la caja tenga 300px de ancho */
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #333333;
+        }
+
+        button {
+            background-color: #9CDBA6;
+            color: #333333;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #86C88E;
+        }
+
+        .interactive-text {
+            font-size: 12px;
+            color: #333333;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .interactive-text:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro</h1>
+        <div class="form-container">
+            <form action="registro.php" method="POST">
+                <input type="text" name="nombre_usuario" placeholder="Nombre de usuario" required>
+                <input type="email" name="correo" placeholder="Correo electrónico" required>
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <input type="password" name="confirmar_contrasena" placeholder="Confirmar contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+
+            <div>
+                <span class="interactive-text" onclick="goToLogin()">Ya tienes cuenta? Inicia sesión aquí</span>
+                <br>
+                <span class="interactive-text" onclick="forgotPassword()">Olvidé mi contraseña</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToLogin() {
+            window.location.href = 'login.html'; // Redirige a la pantalla de inicio de sesión
+        }
+
+        function forgotPassword() {
+            console.log("Olvidé mi contraseña");
+        }
+    </script>
+</body>
+</html>
